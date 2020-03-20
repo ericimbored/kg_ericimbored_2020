@@ -1,19 +1,19 @@
 import sys
 
-def isIso(a, b):
-    m = {} # mapping of each character in a to b
-    r = {} # mapping of each character in b to a
-    for i, c in enumerate(a):
+def AreIso(string1, string2):
+    m = {} # mapping of each character in String1 to String2
+    r = {} # mapping of each character in String2 to String1
+    for i, c in enumerate(string1):
         if c in m:
-            if b[i] != m[c]:
+            if string2[i] != m[c]:
                 return False
         else:
-            m[c] = b[i]
-        if b[i] in r:
-            if c != r[b[i]]:
+            m[c] = string2[i]
+        if string2[i] in r:
+            if c != r[string2[i]]:
                 return False
         else:
-            r[b[i]] = c
+            r[string2[i]] = c
     return True
 
-print(isIso(sys.argv[1], sys.argv[2]))
+print(AreIso(sys.argv[1], sys.argv[2]))
